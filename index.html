@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Calculadora</title>
+  </head>
+  <body>
+    <div class="container" id="info">
+      <h1>Calculadora de Anúncios</h1>
+      <div class="container" id="info2">
+        <div class="input-field col s12">
+          <input type="text" id="inputAnnouncement" />
+          <label class="active" for="inputAnnouncement">Nome do Anúncio </label>
+        </div>
+
+        <div class="input-field col s12">
+          <input type="text" id="inputClient" />
+          <label class="active" for="inputClient">Cliente </label>
+        </div>
+        
+        <div class="row">
+          <div class="input-field col s6" >
+            <input type="date" id="inputStartDate" />  
+            <label class="active" for="inputStartDate">Data inicio</label>
+          </div>
+          
+          <div class="input-field col s6"  >
+            <input type="date" id="inputEndDate" />
+            <label class="active" for="inputEndDate"> Data fim </label>
+          </div>
+        </div>
+          
+
+          <div class="input-field col s10">
+            <input type="number"  id="inputInvestment" />
+            <label id="lb" class="active" for="inputInvestment">Valor de investimento</label>
+          </div>
+        </div>
+        <button id="btn" class="waves-effect waves-light btn">Cadastrar</button>
+      
+        <!-- Filtros -->
+        <div class="container">
+          <div class="input-field col s12">
+            <input type="text" id="inputFilter" />
+            <label class="active" for="inputFilter">Filtrar Cliente</label>
+          </div>
+
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="date" id="filterDate" ></input>
+              <label class="active" for="filterDate"> De </label>
+            </div>
+
+            <div class="input-field col s6">
+              <input type="date" id="filterDate2" />
+              <label class="active" for="filterDate2"> Até </label>
+            </div>
+
+            <button
+              id="btnFilterDate"
+              class="waves-effect deep-orange accent-4 btn"
+            >
+              Filtrar
+            </button>
+          </div>
+
+          <button
+            id="btnFilterClear"
+            class="waves-effect deep-orange accent-4 btn"
+          >
+            Limpar Filtros
+          </button>
+        </div>
+      
+
+      <!-- div para formularios -->
+      <h2>Relatórios</h2>
+      <div id="reports">
+        <h2 id="notFound">Sem Relatórios</h2>
+      </div>
+      <!-- div para formularios -->
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="./calculate.js"></script>
+  <script src="./src/index.js"></script>
+</html>
