@@ -62,6 +62,12 @@ function getData() {
   inputEndDate = document.querySelector('#inputEndDate').value;
   inputInvestment = document.querySelector('#inputInvestment').value;
 
+  var data = new Date();
+  var day = String(data.getDate()).padStart(2, '0');
+  var mounth = String(data.getMonth() + 1).padStart(2, '0');
+  var year = data.getFullYear();
+  let dateNow = year + '-' + mounth + '-' + day;
+
   if (
     inputAnnouncement === '' ||
     inputClient === '' ||
@@ -72,6 +78,8 @@ function getData() {
     M.toast({ html: 'Preencha todos os dados!' });
   } else if (inputStartDate > inputEndDate) {
     M.toast({ html: 'Data cadastrada inválida!' });
+  } else if (inputStartDate < dateNow) {
+    M.toast({ html: 'Somente a partir da data atual!' });
   } else {
     renderReports(calculate.count());
     clear();
